@@ -1,7 +1,7 @@
 from datetime import datetime as dtdt
 
 
-def get_days_from_today(date):
+def get_days_from_today(date: str)-> int:
     try:
         date = dtdt.strptime(date, "%Y-%m-%d")
         tdelta = date.toordinal() - dtdt.today().toordinal()
