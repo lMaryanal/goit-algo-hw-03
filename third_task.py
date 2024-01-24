@@ -4,7 +4,7 @@ import re
 def normalize_phone(phone_number):
     pattern = r"[;,\-:\*\. \(\)]"
     normalised_number = re.sub(pattern, "", phone_number)
-    if normalised_number.isdigit():
+    if not normalised_number.startswith("+"):
         normalised_number = "+38"+ normalised_number if len(normalised_number) == 10 else "+"+ normalised_number
     return(normalised_number)
 
