@@ -1,11 +1,11 @@
 import re
 
 
-def normalize_phone(phone_number):
-    pattern = r"[\d\+]+"
-    normalised_number = re.findall(pattern, phone_number)
-    normalised_number = ''.join(normalised_number)
-    if not normalised_number.startswith("+"):
+def normalize_phone(phone_number): #нормалізує телефонні номери до стандартного формату +38xxxxxxxxxx
+    pattern = r"[\d\+]+" #шаблон вибору з рядка всіх чисел >=1 та +
+    normalised_number = re.findall(pattern, phone_number) #вибирає з рядка всі значення за шаблоном та формує з них список
+    normalised_number = ''.join(normalised_number) 
+    if not normalised_number.startswith("+"): # перевіряє чи номер повний, якщо ні, то додає необхідне
         normalised_number = "+38"+ normalised_number if len(normalised_number) == 10 else "+"+ normalised_number
     return(normalised_number)
 

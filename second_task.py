@@ -1,18 +1,18 @@
 import random
 
-def get_numbers_ticket(min, max, quantity):
-    if min <= quantity <= max and min >= 1 and max <= 1000:
-        random_numbers = random.sample(range(min, max+1), quantity)
+def get_numbers_ticket(min, max, quantity)-> list: #повертатє випадковий набір чисел у межах заданих параметрів
+    if min <= quantity <= max and min >= 1 and max <= 1000: #обмеження
+        random_numbers = random.sample(range(min, max+1), quantity) #вибір випадкових унікальних чисел
         random_numbers.sort()
         return (random_numbers)
     else:
         return([])
 
 
-def get_numbers_ticket2(min, max, quantity):
-    if min <= quantity <= max and min >= 1 and max <= 1000:
+def get_numbers_ticket2(min, max, quantity): #повертатє випадковий набір чисел у межах заданих параметрів
+    if min <= quantity <= max and min >= 1 and max <= 1000: #обмеження
         random_numbers = set()
-        while len(random_numbers) < quantity:
+        while len(random_numbers) < quantity:           #додає випадкове число у множину поки вона не стане потрібної довжини
             random_numbers.add(random.randint(min, max))
         return (list(random_numbers))
     else:

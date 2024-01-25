@@ -1,7 +1,7 @@
 from datetime import datetime as dtdt
 
 
-def get_days_from_today(date: str)-> int:
+def get_days_from_today(date: str)-> int: #розраховує кількість днів між заданою датою і поточною датою.
     try:
         date = dtdt.strptime(date, "%Y-%m-%d")
         tdelta = date.toordinal() - dtdt.today().toordinal()
